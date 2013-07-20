@@ -1,15 +1,21 @@
 {
-  "name": "gitio",
-  "version": "1.0.1",
-  "author" : "Tane Piper <piper.tane@gmail.com>",
-  "description": "Library for nodejs to call the git.io URL shortner",
+  "name": "gitio2",
+  "version": "2.0.0",
+  "author": "Felix Saparelli <me@passcod.name>",
+  "contributors": {"Tane Piper": "piper.tane@gmail.com"},
+  "description": "Wrapper around the git.io URL shortener",
   "main": "./index",
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/tanepiper/node-gitio.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/passcod/node-gitio.git"
   },
-  "bugs" : {
-    "url" : "http://github.com/tanepiper/node-gitio/issues"
+  "bugs": {
+    "url": "http://github.com/passcod/node-gitio/issues"
   },
-  "engines" : ["node >= 0.4.0"]
+  "engines": [
+    "node >= 0.6.0"
+  ],
+  "dependencies": {
+    "request": "2.22.x"
+  }
 }

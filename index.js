@@ -1,44 +1,21 @@
-var http = require('http');
+var request = require('request');
 
-var getGitIoAddress = function(address, code, cb) {
-  
-  var body_fields = '';
-  body_fields += 'url=' + address;
-
-  // Check over the callback position
-  if (code && typeof code === 'function') {
-    cb = code;
-  } else if (code) {
-    body_fields += '&code=' + code;
-  }
-
-  var req = http.request({
-    host: 'git.io',
-    port: 80,
-    method: 'POST',
-    path: '/',
-    headers: {
-      'content-length': body_fields.length
+module.exports = function(url, callback) { 
+  request({
+    url: 'http://git.io/create',
+    method: 'post',
+    form: {
+      'url': url
     }
-  }, function(res) {
-    res.on('end', function() {
+  }, function(err, res, body) {
+    if (err) {
+      return callback(err);
+    }
 
-      var passed = (res.statusCode < 300 && res.statusCode >= 200);
-      if (passed) {
-        cb(null, res.headers.location);
-      } else { 
-        cb(new Error('Git.io ' + res.headers.status));
-      }
-    });
-
-    res.on('error', function(e) {
-      cb(e);
-    })
+    if (res.statusCode < 300 && res.statusCode >= 200) {
+      callback(null, 'http://git.io/' + body);
+    } else { 
+      callback(new Error('Git.io ' + res.headers.status));
+    }
   });
-
-  req.write(body_fields + "\n");
-  req.end();
-}
-
-
-module.exports = getGitIoAddress;
+};

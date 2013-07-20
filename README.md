@@ -1,22 +1,26 @@
-Nodejs git.io module
-====================
+Git.io 2
+========
 
-A simple module to call the [git.io url shortner service](https://github.com/blog/985-git-io-github-url-shortener) with
-nodejs, the module returns a simple object with the status code and URL if created.
+A simple module to call the [git.io url shortener service][0].
+Updated to use its newer API.
+
+Install
+-------
+
+```bash
+$ npm install gitio2
+```
 
 Usage
 -----
 
-    var gitio = require('gitio');
+```javascript
+var gitio = require('gitio');
 
-    // Pass a direct URL and get back a random URL
-    gitio('https://github.com/tanepiper/node-gitio', function(err, result) {
-      if (err) throw err;
-      console.log(result);
-    });
+gitio('https://github.com/passcod/node-gitio', console.log);
+//=> null,    http://git.io/abcde
+//   ^ error  ^ short url
+```
 
-    // Pass an optional key to get the URL of your request
-    gitio('https://github.com/joyent/node', 'nodejs', function(err, result) {
-      if (err) throw err;
-      console.log(result);
-    });
+[0]: https://github.com/blog/985-git-io-github-url-shortener
+
