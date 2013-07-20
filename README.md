@@ -15,7 +15,7 @@ Usage
 -----
 
 ```javascript
-var gitio = require('gitio');
+var gitio = require('gitio2');
 
 gitio('https://github.com/passcod/node-gitio', console.log);
 //=> null,    http://git.io/abcde
