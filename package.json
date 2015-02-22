@@ -1,8 +1,11 @@
 {
   "name": "gitio2",
-  "version": "2.0.0",
-  "author": "Felix Saparelli <me@passcod.name>",
-  "contributors": {"Tane Piper": "piper.tane@gmail.com"},
+  "version": "3.0.0",
+  "author": "Félix Saparelli <me@passcod.name>",
+  "contributors": {
+    "Tane Piper": "piper.tane@gmail.com",
+    "Nathan Warner": "nathan@frcv.net"
+  },
   "description": "Wrapper around the git.io URL shortener",
   "main": "./index",
   "repository": {
@@ -16,6 +19,6 @@
     "node >= 0.6.0"
   ],
   "dependencies": {
-    "request": "2.22.x"
+    "request": "^2.22.0"
   }
 }
