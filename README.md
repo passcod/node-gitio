@@ -1,26 +1,10 @@
 Git.io 2
 ========
 
-A simple module to call the [git.io url shortener service][0].
-Updated to use its newer API.
+__This is deprecated.__ The [original module] has been updated and is now
+what you should use. This module will live on for backward compatibility
+as a wrapper on top of the real module, but you should not trust that it
+remains alive forever (and indeed the plan is to yank as soon as downloads
+reach an acceptable level).
 
-Install
--------
-
-```bash
-$ npm install gitio2
-```
-
-Usage
------
-
-```javascript
-var gitio = require('gitio2');
-
-gitio('https://github.com/passcod/node-gitio', console.log);
-//=> null,    http://git.io/abcde
-//   ^ error  ^ short url
-```
-
-[0]: https://github.com/blog/985-git-io-github-url-shortener
-
+[original module]: https://github.com/tanepiper/node-gitio

@@ -6,7 +6,7 @@
     "Tane Piper": "piper.tane@gmail.com",
     "Nathan Warner": "nathan@frcv.net"
   },
-  "description": "Wrapper around the git.io URL shortener",
+  "description": "Deprecated. Use gitio instead.",
   "main": "./index",
   "repository": {
     "type": "git",
@@ -19,6 +19,6 @@
     "node >= 0.6.0"
   ],
   "dependencies": {
-    "request": "^2.22.0"
+    "gitio": "^2.1.1"
   }
 }

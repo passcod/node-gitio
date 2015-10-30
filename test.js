@@ -1,25 +1,15 @@
-var gitio = require('./index');
+console.log('(Results may not be in order)')
+console.log('Input : Expected output')
 
-var urls = [
-  ["https://github.com/passcod/node-gitio", "https://git.io/AuAj"],
-  ["https://passcod.name", "[Error: Git.io 500 Internal Server Error]"]
-];
+[
+  ['https://github.com/passcod/node-gitio', 'https://git.io/AuAj'],
+  ['https://passcod.name', 'The url https://passcod.name is not a valid address for git.io']
+].map(function(url) {
+  console.log(url.join(' : '))
+  return url
+}).forEach(function(source) {
+  require('.')(source[0], function(err, url) {
+    console.log(source[0], ':', err && err.message || url)
+  })
+})
 
-console.log("Input, Expected output");
-urls.forEach(function(url) {
-  var source = url[0];
-  var result = url[1];
-  console.log(source + ', ' + result);
-});
-console.log("-----");
-console.log("(Results may not be in order)");
-
-urls.forEach(function(source) {
-  gitio(source[0], function(err, url) {
-    if (err) {
-      console.log("Got error: ", err);
-    } else {
-      console.log("Got URL: ", url);
-    }
-  });
-});
